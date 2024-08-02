@@ -1,7 +1,7 @@
 import { IUrl } from "../database/entities/Url";
 import { urlModel } from "../database/models"
 
-export const retrieveUrlService = async (shortUrl: string) => {
+export const retrieveUrlService = async (shortUrl: string): Promise<IUrl["originalUrl"]> => {
   const url = await urlModel.findOne({ shortUrl });
 
   if (!url) {
