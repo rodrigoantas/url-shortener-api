@@ -1,9 +1,15 @@
 import { Router, Request, Response } from 'express';
+import { retrieveUrlController, shortenUrlController } from '../controllers/url-shortener.controller';
+import { topViewedUrlController } from '../controllers/url-status.controller';
 
 const router = Router();
 
-router.get("/test", async (request: Request, response: Response) => {
-  return response.status(200).json({ test: 1 });
+router.get("/ping", async (request: Request, response: Response) => {
+  return response.status(200).send("Pong");
 })
+
+router.put('/create', shortenUrlController)
+router.get('/retrieve', retrieveUrlController)
+router.get('/top', topViewedUrlController);
 
 export default router
