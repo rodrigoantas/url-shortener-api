@@ -18,13 +18,13 @@ export const shortenUrlService = async (url: string, CUSTOM_ALIAS: string) => {
     shortUrl: shortUrl
   }
 
-  const newUrl = await urlModel.create(newUrlFormated)
+  await urlModel.create(newUrlFormated)
 
   const endTime = Date.now();
 
   return {
     alias: shortUrl,
-    url: `http://shortener/u/${shortUrl}`,
+    url: `http://localhost:3333/api/${shortUrl}`,
     statistics: {
       time_taken: `${endTime - startTime}ms`
     }
