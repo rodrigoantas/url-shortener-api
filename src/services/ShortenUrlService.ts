@@ -1,9 +1,17 @@
 import { urlModel } from "../database/models"
 
 import shortid from 'shortid';
+import { isValidUrl } from "../utils";
 
 export const shortenUrlService = async (url: string, CUSTOM_ALIAS: string) => {
   const startTime = Date.now();
+
+  //  This validation could be a Joi, but i don't think it's a good idea to
+  //  add a library just for one validation.
+  const isValid = isValidUrl(url)
+  if (!isValid) {
+    throw new Error("Url must start with http:// or https://")
+  }
 
   if (CUSTOM_ALIAS && typeof CUSTOM_ALIAS === 'string') {
     const existingUrl = await urlModel.findOne({ shortUrl: CUSTOM_ALIAS });
