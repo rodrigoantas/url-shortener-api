@@ -22,7 +22,7 @@ describe('shortenUrlService', () => {
     });
     expect(result).toEqual({
       alias: 'customAlias',
-      url: 'http://localhost:3333/api/customAlias',
+      url: 'http://localhost:3333/api/retrieve/customAlias',
       statistics: {
         time_taken: expect.any(String),
       },
@@ -52,7 +52,7 @@ describe('shortenUrlService', () => {
     });
     expect(result).toEqual({
       alias: 'generatedAlias',
-      url: 'http://localhost:3333/api/generatedAlias',
+      url: 'http://localhost:3333/api/retrieve/generatedAlias',
       statistics: {
         time_taken: expect.any(String),
       },
