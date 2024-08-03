@@ -6,6 +6,8 @@ export const shortenUrlController = async (request: Request, response: Response)
   try {
     const { url, CUSTOM_ALIAS } = request.query
 
+    console.log({ url })
+
     if (!url) {
       throw new Error("Url is required.")
     }
