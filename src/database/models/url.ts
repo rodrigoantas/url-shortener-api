@@ -1,4 +1,4 @@
-import { Document, model, Schema } from 'mongoose';
+import mongoose, { Document, model, Schema } from 'mongoose';
 import { IUrl } from '../entities/Url';
 
 interface UrlDocument extends Omit<IUrl, '_id'>, Document { }
@@ -15,4 +15,4 @@ const UrlSchema = new Schema<UrlDocument>({
   }
 );
 
-export const urlModel = model<UrlDocument>('Board', UrlSchema, 'urls')
+export default mongoose.model<UrlDocument>('Board', UrlSchema, 'urls')

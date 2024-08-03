@@ -1,4 +1,4 @@
-import { urlModel } from "../database/models"
+import urlModel from "../database/models/url"
 import shortid from 'shortid';
 
 export const shortenUrlService = async (url: string, CUSTOM_ALIAS: string) => {
@@ -13,12 +13,10 @@ export const shortenUrlService = async (url: string, CUSTOM_ALIAS: string) => {
 
   const shortUrl = CUSTOM_ALIAS || shortid.generate()
 
-  const newUrlFormated = {
+  await urlModel.create({
     originalUrl: url,
     shortUrl: shortUrl
-  }
-
-  await urlModel.create(newUrlFormated)
+  })
 
   const endTime = Date.now();
 
