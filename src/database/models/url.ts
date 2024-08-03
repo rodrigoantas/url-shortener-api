@@ -15,4 +15,4 @@ const UrlSchema = new Schema<UrlDocument>({
   }
 );
 
-export default mongoose.model<UrlDocument>('Board', UrlSchema, 'urls')
+export const urlModel = mongoose.model<UrlDocument>('Board', UrlSchema, 'urls')

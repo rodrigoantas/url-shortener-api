@@ -1,4 +1,5 @@
-import urlModel from "../database/models/url"
+import { urlModel } from "../database/models"
+
 import shortid from 'shortid';
 
 export const shortenUrlService = async (url: string, CUSTOM_ALIAS: string) => {

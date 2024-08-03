@@ -1,8 +1,7 @@
 
 import shortid from 'shortid';
 import { shortenUrlService } from "./ShortenUrlService";
-import urlModel from "../database/models/url"
-const mockingoose = require('mockingoose');
+import { urlModel } from "../database/models"
 jest.mock("../database/models");
 jest.mock('shortid');
 
