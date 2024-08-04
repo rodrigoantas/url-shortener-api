@@ -28,7 +28,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Available routes
    - ```put('/api/create?url={url}&CUSTOM_ALIAS={customAlias}')``` Create a short URL.
-   - ```get('/api/retrieve/:shortUrl')``` Access the original URL via the alias.
+   - ```get('/u/:shortUrl')``` Access the original URL via the alias.
    - ```get('/api/top')``` Get the 10 most accessed URL's.
 
 

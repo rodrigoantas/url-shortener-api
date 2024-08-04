@@ -9,7 +9,7 @@ router.get("/ping", async (request: Request, response: Response) => {
 })
 
 router.put('/create', shortenUrlController)
-router.get('/retrieve/:shortUrl', retrieveUrlController)
+router.get('/u/:shortUrl', retrieveUrlController)
 router.get('/top', topViewedUrlController);
 
 export default router

@@ -31,7 +31,7 @@ export const shortenUrlService = async (url: string, CUSTOM_ALIAS: string) => {
 
   return {
     alias: shortUrl,
-    url: `http://localhost:3333/api/retrieve/${shortUrl}`,
+    url: `http://localhost:3333/u/${shortUrl}`,
     statistics: {
       time_taken: `${endTime - startTime}ms`
     }
